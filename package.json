@@ -1,0 +1,18 @@
+{
+  "name": "collaborative_board",
+  "version": "1.0.0",
+  "description": "Backend project using socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Ramesh Mahant",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.1",
+    "socket.io": "^4.5.0"
+  }
+}

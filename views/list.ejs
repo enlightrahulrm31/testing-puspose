@@ -1,0 +1,119 @@
+<html>
+  <head>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      height: 100vh;
+      background-color : #F0E9D2;
+      /* font-family: "Sansita Swashed", cursive; */
+    }
+    .room{
+        width: 400px;
+        margin: 5px;
+        padding-left: 30px;
+        /* float: left; */
+    }
+    .FONT{
+      font-family: "Sansita Swashed", cursive;
+    }
+    .messages{
+        width: 390px;
+        margin:5px;
+        height: 300px;
+        overflow: scroll;
+        background-color: pink;
+    }   
+    #list li{
+      list-style-type: none;
+      padding-right: 25px;
+      font-size: large;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  .button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
+  } 
+
+  .button-28:disabled {
+    pointer-events: none;
+  }
+  
+  .button-28:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  #buttondiv {
+    text-align: center;
+    width: 50%;
+    margin: auto auto;
+  }
+
+</style>
+  <body>
+    <!-- <h1>Drawing Board</h1> -->
+    <h1 style=" text-align: center; " class="FONT">Room : <%= roomname %></h1>
+    <div class="room">
+      <h1 style=" text-align: center;"> Activity</h1>
+      <div class="messages" id = "Messages" style=" text-align: center;"></div>
+      <div class = "Users">
+        <h1 style=" text-align: center;">Users</h1>
+        <ul id = "list" style=" text-align: center;"></ul>
+      </div>
+      <!-- <div class="Leave">
+        <button id = "LeaveButton">Leave</button>
+      </div> -->
+      <div id="buttondiv">
+            <button class="button-28" id = "LeaveButton" role="button">Leave</button>
+      </div>
+    </div>
+    <form action="">
+      <input type="hidden" id="username" value = <%= personname %>>
+      <input type="hidden" id="userroom" value = <%= roomname %>>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script> <!-- Intergrating the socket to the client side also -->
+    <script src="sktech.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  <!--- used for prompt message -->
+  </body>
+</html>
